@@ -14,18 +14,18 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Connection',
-    //   component: Connection
-    // },
-    // {
-    //   path: '/createUser',
-    //   name: 'CreateUser',
-    //   component: CreateUser
-    // },
     {
       path: '/',
+      name: 'Connection',
+      component: Connection
+    },
+    {
+      path: '/createUser',
+      name: 'CreateUser',
+      component: CreateUser
+    },
+    {
+      path: '/search',
       name: 'SearchParking',
       component: SearchParking
     },
