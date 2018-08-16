@@ -1,24 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
-const axios = require('axios');
 
 const app = express();
 
 app.use(cors());
-
-// axios({
-//   method: 'post',
-//   url: '/createUser',
-//   data: {
-//     name: 'Fred',
-//     password: 'Flintstone'
-//   }
-// });
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Content-Type", "application/x-www-form-urlencoded");
+  next();
+});
 
 app.post('/createUser', function (req, res) {
   console.log("GOOD");
-  console.log(res);
 });
 
 // open database in memory

@@ -56,7 +56,7 @@
     name: 'SearchParking',
     data() {
       return {
-        msg: 'Bienvenue sur SearchParking',
+        msg: 'Rechercher un parking',
         searchName: '',
         searchCity: '',
         searchPrice: false,

@@ -38,23 +38,25 @@
         //   }
         // };
 
-        // axios.post('http://localhost:3000/createUser', {name: this.userName, password: this.userPass}, headers).then(res => {
+        axios.post('http://localhost:3000/createUser',
+          this.userName,
+          this.userPass,
+          { headers: {
+              'Content-type': 'application/x-www-form-urlencoded',
+            }
+          }).then(res =>{});
+
+        // axios.post(url, {name: this.userName, password: this.userPass}, headers).then(res => {
         // });
 
         // return axios.request({
         //   url: url,
         //   method: "POST",
         //   headers: {
-        //     "Content-Type": "application/x-www-form-urlencoded",
-        //     'Access-Control-Allow-Origin': '*',
-        //     'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Accept, Origin, Authorization',
-        //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        //     'Content-Type': 'application/x-www-form-urlencoded',
         //   },
         //   data: this.data
         // });
-
-        axios.post(url, {name: this.userName, password: this.userPass}).then(res => {
-        })
       }
     }
   }
