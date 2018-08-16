@@ -23,7 +23,7 @@
         userPass: '',
       }
     },
-    mounted() {
+    mounted() { 
     },
     methods: {
       validate() {
