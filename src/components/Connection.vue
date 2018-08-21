@@ -11,26 +11,40 @@
 </template>
 
 <script>
-export default {
-  name: 'Connection',
-  data () {
-    return {
-      msg: 'Bienvenue sur SearchParking',
-      userName: '',
-      userPass: '',
-    }
-  },
-  mounted() {
-  },
-  methods: {
-    connect () {
-
+  import axios from 'axios';
+  export default {
+    name: 'Connection',
+    data() {
+      return {
+        msg: 'Bienvenue sur SearchParking',
+        userName: '',
+        userPass: '',
+      }
     },
-    create () {
-      this.$router.push('CreateUser')
+    mounted() {
+    },
+    methods: {
+      connect() {
+        let url = 'http://localhost:3000/';
+        axios.post(url,
+          this.userName,
+          this.userPass,
+          {
+            headers: {
+              'Content-type': 'application/x-www-form-urlencoded',
+            }
+          }).then(function(res){
+            const status = JSON.parse(res.data.response.status);
+            if (status === '200'){
+              this.$router.push({name: 'SearchParking'});
+            }
+        });
+      },
+      create() {
+        this.$router.push({name: 'CreateUser'});
+      }
     }
   }
-}
 </script>
 
 <style scoped>

@@ -9,6 +9,7 @@
         <br/>
       </div>
     </form>
+    <button class="btn btn-primary"@click="retour">Retour</button><br />
   </div>
 </template>
 
@@ -28,35 +29,16 @@
     methods: {
       validate() {
         let url = 'http://localhost:3000/createUser';
-
-        // let headers = {
-        //   headers: {
-        //     'Access-Control-Allow-Origin': '*',
-        //     'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Accept, Origin, Authorization',
-        //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        //     'Content-Type': 'application/x-www-form-urlencoded'
-        //   }
-        // };
-
-        axios.post('http://localhost:3000/createUser',
+        axios.post(url,
           this.userName,
           this.userPass,
           { headers: {
               'Content-type': 'application/x-www-form-urlencoded',
             }
           }).then(res =>{});
-
-        // axios.post(url, {name: this.userName, password: this.userPass}, headers).then(res => {
-        // });
-
-        // return axios.request({
-        //   url: url,
-        //   method: "POST",
-        //   headers: {
-        //     'Content-Type': 'application/x-www-form-urlencoded',
-        //   },
-        //   data: this.data
-        // });
+      },
+      retour() {
+        this.$router.push({name: 'Connection'})
       }
     }
   }
