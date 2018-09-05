@@ -6,6 +6,7 @@
       <input type="text" v-model="userPass" placeholder="mot de passe"><br />
       <button class="btn btn-primary"@click="connect">Connection</button><br />
       <button class="btn btn-primary"@click="create">Créer un compte</button><br />
+      <button class="btn btn-primary"@click="search">Lancer une recherche</button><br />
     </div>
   </div>
 </template>
@@ -42,6 +43,9 @@
       },
       create() {
         this.$router.push({name: 'CreateUser'});
+      },
+      search() {
+        this.$router.push({name: 'SearchParking'});
       }
     }
   }
